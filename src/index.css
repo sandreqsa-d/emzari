@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* CyberKids - Vibrant Tech Theme for Kids */
+    --background: 220 25% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 25% 14%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 25% 14%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Cyber Blue - Primary */
+    --primary: 200 100% 50%;
+    --primary-foreground: 220 25% 10%;
+
+    /* Neon Green - Secondary/Success */
+    --secondary: 150 100% 45%;
+    --secondary-foreground: 220 25% 10%;
+
+    /* Electric Purple - Accent */
+    --accent: 280 100% 65%;
+    --accent-foreground: 210 40% 98%;
+
+    --muted: 220 20% 20%;
+    --muted-foreground: 210 20% 60%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 25%;
+    --input: 220 20% 20%;
+    --ring: 200 100% 50%;
+
+    --radius: 1rem;
+
+    /* Custom CyberKids Colors */
+    --cyber-blue: 200 100% 50%;
+    --cyber-blue-glow: 200 100% 70%;
+    --neon-green: 150 100% 45%;
+    --neon-green-glow: 150 100% 65%;
+    --electric-purple: 280 100% 65%;
+    --warning-orange: 35 100% 55%;
+    --cyber-pink: 330 100% 65%;
+
+    /* Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(200 100% 50%), hsl(280 100% 65%));
+    --gradient-success: linear-gradient(135deg, hsl(150 100% 45%), hsl(180 100% 50%));
+    --gradient-card: linear-gradient(145deg, hsl(220 25% 16%), hsl(220 25% 12%));
+    --gradient-hero: linear-gradient(180deg, hsl(220 25% 12%) 0%, hsl(220 30% 8%) 100%);
+
+    /* Shadows */
+    --shadow-neon-blue: 0 0 20px hsl(200 100% 50% / 0.4), 0 0 40px hsl(200 100% 50% / 0.2);
+    --shadow-neon-green: 0 0 20px hsl(150 100% 45% / 0.4), 0 0 40px hsl(150 100% 45% / 0.2);
+    --shadow-neon-purple: 0 0 20px hsl(280 100% 65% / 0.4), 0 0 40px hsl(280 100% 65% / 0.2);
+
+    --sidebar-background: 220 25% 12%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 200 100% 50%;
+    --sidebar-primary-foreground: 220 25% 10%;
+    --sidebar-accent: 220 20% 20%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 20% 25%;
+    --sidebar-ring: 200 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Fredoka', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .cyber-glow {
+    box-shadow: var(--shadow-neon-blue);
+  }
+
+  .cyber-glow-green {
+    box-shadow: var(--shadow-neon-green);
+  }
+
+  .cyber-glow-purple {
+    box-shadow: var(--shadow-neon-purple);
+  }
+
+  .gradient-cyber {
+    background: var(--gradient-cyber);
+  }
+
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .text-gradient-cyber {
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+  }
+
+  .cyber-border {
+    border: 2px solid hsl(var(--primary));
+    box-shadow: inset 0 0 20px hsl(var(--primary) / 0.1), var(--shadow-neon-blue);
+  }
+
+  .cyber-card {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+  }
+
+  .cyber-card:hover {
+    border-color: hsl(var(--primary));
+    box-shadow: var(--shadow-neon-blue);
+    transform: translateY(-4px);
+  }
+}
+
+@layer utilities {
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--primary) / 0.3);
+    }
+  }
+
+  @keyframes bounce-slow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @keyframes scan-line {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+    animation: scan-line 3s linear infinite;
+  }
+}
